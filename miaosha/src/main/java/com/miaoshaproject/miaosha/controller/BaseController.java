@@ -7,6 +7,7 @@ import com.miaoshaproject.miaosha.response.CommonReturnType;
 import com.miaoshaproject.miaosha.service.model.UserModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -15,8 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+@Controller
 public class BaseController {
 
+    public static final String CONTENT_TYPE_FROMED="application/x-www-form-urlencoded";
 
     //定义exceptionhandler解决未被controller层吸收的exception
     @ExceptionHandler(Exception.class)
