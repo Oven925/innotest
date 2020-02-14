@@ -1,5 +1,7 @@
 package com.miaoshaproject.miaosha.controller.viewobject;
 
+import org.joda.time.DateTime;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -19,6 +21,50 @@ public class ItemVO {
     private Integer sales;
 
     private String imgUrl;
+
+    //记录商品是否在秒杀活动中
+    private Integer promoStatus;
+
+    //活动价格
+    private BigDecimal promoPrice;
+
+    //活动id
+    private Integer promoId;
+
+    //活动开始时间
+    private String startDate;
+
+    public Integer getPromoStatus() {
+        return promoStatus;
+    }
+
+    public void setPromoStatus(Integer promoStatus) {
+        this.promoStatus = promoStatus;
+    }
+
+    public BigDecimal getPromoPrice() {
+        return promoPrice;
+    }
+
+    public void setPromoPrice(BigDecimal promoPrice) {
+        this.promoPrice = promoPrice;
+    }
+
+    public Integer getPromoId() {
+        return promoId;
+    }
+
+    public void setPromoId(Integer promoId) {
+        this.promoId = promoId;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
 
     public Integer getId() {
         return id;
@@ -74,5 +120,22 @@ public class ItemVO {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "ItemVO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", description='" + description + '\'' +
+                ", sales=" + sales +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", promoStatus=" + promoStatus +
+                ", promoPrice=" + promoPrice +
+                ", promoId=" + promoId +
+                ", startDate='" + startDate + '\'' +
+                '}';
     }
 }
